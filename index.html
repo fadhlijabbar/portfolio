@@ -9,8 +9,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
+
+
+<script>
+    $(document).ready(function() {
+        // Scroll event handler
+        $(window).scroll(function() {
+            // Check the scroll position
+            if ($(this).scrollTop() > 500) {
+                $('#arrow-btn').removeClass('hidden').addClass('inline-flex'); // Show the button
+            } else {
+                $('#arrow-btn').removeClass('inline-flex').addClass('hidden'); // Hide the button
+                $('#arrow-btn p').addClass('hidden'); // Ensure text is hidden when button is hidden
+            }
+        });
+
+        // Hover event handlers
+        $('#arrow-btn').hover(
+            function() {
+                $(this).find('p').removeClass('hidden').addClass('flex'); // Show the text
+                $(this).removeClass('px-3').addClass('px-4'); // Change padding to px-4
+            },
+            function() {
+                $(this).find('p').removeClass('flex').addClass('hidden'); // Hide the text
+                $(this).removeClass('px-4').addClass('px-3'); // Reset padding to px-3
+            }
+        );
+    });
+</script>
+
 <body>
+
+<div id="arrow-btn" class="fixed z-50 bottom-10 right-10 hidden bg-primary hover:bg-primary-active cursor-pointer px-3 py-3 rounded-full">
+    <img src="./src/assets/arrow_up.svg" alt="" id="arrow-up">
+    <p class="font-plusjakarta text-white font-medium items-center hidden">
+        Scroll to Top
+    </p>
+</div>
+
 
 <div class="bg-white relative h=screen"> 
     <img src="./src/assets/background.svg" alt="Background" class="absolute object-cover w-full h-full z-0">
@@ -36,9 +76,18 @@
                 </a>
             </div>
 
-            <a href="mailto:fadhlijabbar@outlook.com">
-                <button class="group flex gap-2 items-center justify-center px-5 py-3 rounded-lg text-primary border border-primary font-plusjakarta font-semibold transition duration-300 hover:bg-primary hover:text-white active:bg-primary-active">Let's Collaborate <img src="./src/assets/message.svg" class="transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0" alt=""></button>
+            <a href="mailto:fadhlijabbar@outlook.com"> 
+                <div class="relative">
+                    <span class="absolute inset-0 animate-custom-ping rounded-lg border border-primary opacity-50 z-0"></span>
+                    <button class="group relative z-10 flex gap-2 items-center justify-center px-5 py-3 rounded-lg text-primary border border-primary font-plusjakarta font-semibold transition duration-300 hover:bg-primary hover:text-white active:bg-primary-active bg-white">
+                        Let's Collaborate 
+                        <img src="./src/assets/message.svg" class="transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0" alt="">
+                    </button>
+                </div>
             </a>
+            
+            
+            
         </div>
     </div>  
 </div> 
