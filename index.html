@@ -14,42 +14,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
-
-<script>
-    $(document).ready(function() {
-        // Scroll event handler
-        $(window).scroll(function() {
-            // Check the scroll position
-            if ($(this).scrollTop() > 500) {
-                $('#arrow-btn').removeClass('hidden').addClass('inline-flex'); // Show the button
-            } else {
-                $('#arrow-btn').removeClass('inline-flex').addClass('hidden'); // Hide the button
-                $('#arrow-btn p').addClass('hidden'); // Ensure text is hidden when button is hidden
-            }
-        });
-
-        // Hover event handlers
-        $('#arrow-btn').hover(
-            function() {
-                $(this).find('p').removeClass('hidden').addClass('flex'); // Show the text
-                $(this).removeClass('px-3').addClass('px-4'); // Change padding to px-4
-            },
-            function() {
-                $(this).find('p').removeClass('flex').addClass('hidden'); // Hide the text
-                $(this).removeClass('px-4').addClass('px-3'); // Reset padding to px-3
-            }
-        );
-    });
-</script>
-
 <body>
-
-<div id="arrow-btn" class="fixed z-50 bottom-10 right-10 hidden bg-primary hover:bg-primary-active cursor-pointer px-3 py-3 rounded-full">
-    <img src="./src/assets/arrow_up.svg" alt="" id="arrow-up">
-    <p class="font-plusjakarta text-white font-medium items-center hidden">
-        Scroll to Top
-    </p>
-</div>
 
 
 <div class="bg-white relative h=screen"> 
