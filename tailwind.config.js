@@ -11,13 +11,13 @@ module.exports = {
         'neutral-secondary': '#686868',
         'neutral-border': '#DADADA',
         'neutral-menu': '#f1f1f1',
-        'primary': '#F72585',
+        'primary': '#B9C1E5',
         'primary-active': '#3462D9',
         'primary-dark': '#111111',
         'secondary-dark': '#252525',
         'light-secondary': '#BBBBBB',
-        'secondary': '#B5179E',
-        'accent': '#4895EF'
+        'secondary': '#4895EF',
+        'accent': '#B5179E'
       },
       width: {
         '800': '800px',
